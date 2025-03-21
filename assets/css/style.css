@@ -12,6 +12,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   background: linear-gradient(to right, #cc5500, #fff);
+  /* Background gradient for the body */
 }
 
 .gradient-text {
