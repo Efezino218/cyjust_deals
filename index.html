@@ -123,8 +123,6 @@
   <link rel="icon" href="https://cyjustdeals.com/assets/img/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="https://cyjustdeals.com/assets/img/favicon.png">
 
-
-
   <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
@@ -138,6 +136,9 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Add SweetAlert2 to Your Project: Include SweetAlert2 from a CDN in your HTML: -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -148,6 +149,8 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <body>
 
@@ -155,7 +158,7 @@
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"> <img src="assets/img/logo.png" alt="">
+      <h1 class="logo me-auto"> <img src="assets/images/Cyjust (1).png" alt="">
         <a href="index.html">Cyjust <span style="color: #cc5500;">Deals</span> </a>
       </h1>
 
@@ -165,17 +168,18 @@
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
           <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
+          <li><a href="./packages.html">Packages</a></li>
           <li class="dropdown">
-            <a href="#"><span>Packages</span> <i class="bi bi-chevron-down"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="pricing-table.html">Packages</a></li>
-              <li><a href="shop.html">Store</a></li>
+            <!-- <a href="#"><span>Packages</span></a> -->
+            <ul>
+
+              <!-- <li><a href="shop.html">Store</a></li> -->
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+      </nav>
 
 
     </div>
@@ -191,7 +195,7 @@
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
           data-aos="fade-up" data-aos-delay="200">
           <h1>Transforming Ideas into Digital Reality</h1>
-          <h2>Your One-Stop Solution for Web Development, Graphics, and Creative Designs</h2>
+          <h2>Your One-Stop Solution for Graphics, and Creative Designs</h2>
           <div class="d-flex justify-content-center justify-content-lg-start">
             <a href="https://wa.me/message/M5LRGSKQIQKZL1" target="_blank" class="btn-get-started scrollto">Get
               Started</a>
@@ -270,23 +274,29 @@
 
         <div class="row content">
           <div class="col-lg-6">
-            <p>
-              At Cyjust Deal, we specialize in crafting powerful digital experiences that elevate your brand. With
-              expertise in web development, graphic design, and branding, we are committed to turning your ideas into
-              impactful digital solutions. Whether you're a business looking to establish a strong online presence or
-              seeking to refresh your brand identity,
+            <p class="">
+              At Cyjust Deal, we are your dedicated partners in digital branding and development,
+              committed to crafting powerful digital experiences that elevate your brand. Our mission is
+              to empower brands through creative digital solutions, leveraging our expertise in
+              graphic design, and branding to turn your ideas into impactful digital realities.
+              Whether you're looking to establish a strong online presence or refresh your brand identity,
+              our team of professionals is here to guide you every step of the way. We help you stand out in
+              the digital world with custom-tailored services that resonate with your target audience,
+              ensuring your brand not only meets but exceeds its digital potential. Choose us for our
+              proven expertise in branding, web development, and design, and let us transform your vision
+              into a compelling digital experience.
             </p>
-            <ul>
+            <!-- <ul>
               <li><i class="ri-check-double-line"></i> Who We Are: Your Partners in Digital Branding and Development
               </li>
               <li><i class="ri-check-double-line"></i> Our Mission: Empowering Brands Through Creative Digital Solutions
               </li>
               <li><i class="ri-check-double-line"></i>Why Choose Us: Expertise in Branding, Web Development, and Design
               </li>
-            </ul>
+            </ul> -->
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
-            <p>
+            <p class="gradient-text">
               our team of professionals is here to guide you every step of the way. Our mission is to help you stand out
               in the digital world with creative, custom-tailored services that resonate with your target audience.
 
@@ -355,7 +365,8 @@
           </div>
 
           <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img"
-            style='background-image: url("assets/img/CyjustBenefit\ 1.png");' data-aos="zoom-in" data-aos-delay="150">
+            style='background-image: url("./assets/img/Black-employees222.jpg");' data-aos="zoom-in"
+            data-aos-delay="150">
             &nbsp;</div>
         </div>
 
@@ -371,10 +382,11 @@
             <img src="assets/img/Frame 9.png" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
-            <h3>Helping Your Brand Grow:</h3>
-            <p class="fst-italic">
-              Welcome to Cyjust Deals, your partner in boosting and improving your brand. We’re here to help you find
-              new opportunities and make your business stand out in today’s busy digital world.
+            <h3>Helping Your Brand Thrive:</h3>
+            <p class="fst-italic gradient-text">
+              Welcome to Cyjust Deals, your trusted partner in unlocking growth and elevating your
+              brand to new heights. In today’s fast-paced digital landscape, we’re here to help you
+              seize opportunities, stand out from the competition, and create a lasting impression.
 
             </p>
 
@@ -382,10 +394,13 @@
 
               <div class="progress">
                 <span class="skill">Expert Help:</span>
-                <p>
-                  Our team is passionate about helping brands succeed. We understand the latest trends in digital and
-                  design, and we offer simple, clear advice to create solutions that fit your brand and attract your
-                  audience.
+                <p class="gradient-text">
+                  Whether you’re looking to refine your brand identity, expand your online presence,
+                  or connect with your audience in meaningful ways, we provide the tools, expertise,
+                  and creativity to make it happen. Let’s work together to transform your vision into
+                  reality and take your business to the next level.
+                  This version is more dynamic, goal-oriented, and focused on collaboration and growth.
+
                 </p>
               </div>
 
@@ -403,12 +418,13 @@
 
         <div class="section-title">
           <h2>Services</h2>
-          <p>At Cyjust Deals, we offer a range of services designed to help your brand shine. Whether you need a
-            stunning website, creative graphics, or a memorable logo, we've got you covered. Our services include:</p>
+          <p>At Cyjust Deals, we provide a full suite of services tailored to make your brand stand out.
+            From eye-catching designs to seamless digital experiences, we’ve got everything you need to
+            captivate your audience and leave a lasting impression.</p>
         </div>
 
         <div class="row">
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+          <!-- <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
               <h4><a href="pricing-table.html" target="_blank">Web Design</a></h4>
@@ -418,20 +434,20 @@
                   your audience.</p>
               </a>
             </div>
-          </div>
+          </div> -->
 
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
+          <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
             data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-file"></i></div>
-              <h4><a href="pricing-table.html" target="_blank">Branding:</a></h4>
+              <h4><a href="pricing-table.html" target="_blank">Elevate Your Brand:</a></h4>
               <a href="pricing-table.html">
-                <p>We help build and enhance your brand’s image, ensuring it stands out in the marketplace.</p>
+                <p>We craft distinctive brand experiences that resonate and command attention.</p>
               </a>
             </div>
           </div>
 
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
+          <!-- <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
             data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
@@ -442,68 +458,63 @@
                   tailored to your needs</p>
               </a>
             </div>
-          </div>
+          </div> -->
 
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
+          <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
             data-aos-delay="400">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-layer"></i></div>
               <h4><a href="pricing-table.html" target="_blank">Graphics Design</a></h4>
               <a href="pricing-table.html">
-                <p>Make your brand stand out with eye-catching visuals.
-                  Our skilled graphic designers create compelling designs</p>
+                <p>Increase Brand Recognition Through Powerful Visuals:
+                  We create designs that make your brand unforgettable.</p>
               </a>
             </div>
           </div>
 
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-xl-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4><a href="pricing-table.html" target="_blank">Content Creation:</a></h4>
+              <h4><a href="pricing-table.html" target="_blank">Compelling Content That Connects:</a></h4>
               <a href="pricing-table.html">
-                <p> our talented designers craft visually stunning and
-                  user-friendly sites that elevate your brand and engage
-                  your audience.</p>
+                <p> We craft engaging narratives that resonate with your audience and drive meaningful interactions.</p>
               </a>
             </div>
           </div>
 
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
-            data-aos-delay="200">
+          <br>
+
+          <div class="col-xl-4 col-md-6 ... " style="margin-top: 70px;" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-file"></i></div>
-              <h4><a href="pricing-table.html" target="_blank">Social Media Management</a></h4>
+              <h4><a href="pricing-table.html" target="_blank">Your Social Media, Managed</a></h4>
               <a href="pricing-table.html">
-                <p>We handle your social media. We post cool stuff, talk to your fans,
-                  and make sure your social game is strong </p>
+                <p>We create and manage social media content that sparks conversations and builds relationships. </p>
               </a>
             </div>
           </div>
 
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
-            data-aos-delay="300">
+          <div class="col-xl-4 col-md-6 ..." style="margin-top: 70px;" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4><a href="pricing-table.html" target="_blank">Video Advert</a></h4>
+              <h4><a href="pricing-table.html" target="_blank">Strategic Video Advertising</a></h4>
               <a href="pricing-table.html">
-                <p>We make awesome videos to promote your business. People watch them,
-                  like them, and maybe even buy your stuff.</p>
+                <p>We create targeted video content that drives measurable results and boosts your bottom line.</p>
               </a>
+              <br>
             </div>
           </div>
 
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
-            data-aos-delay="400">
+          <div class="col-xl-4 col-md-6 " style="margin-top: 70px;" data-aos="zoom-in" data-aos-delay="400">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-layer"></i></div>
               <h4><a href="pricing-table.html" target="_blank">Animation</a></h4>
               <a href="pricing-table.html">
-                <p>We create cool moving pictures. Whether it's for explaining things or just looking awesome,
-                  we've got you covered.</p>
+                <p>We create animations designed to communicate your message with clarity and impact.</p>
               </a>
+              <br>
             </div>
           </div>
-
         </div>
 
       </div>
@@ -516,11 +527,12 @@
         <div class="row">
           <div class="col-lg-9 text-center text-lg-start">
             <h3>Call To Action</h3>
-            <p> Click now to take your brand to the next level with our expert services. Let’s create success together!
+            <p> Click now to take your brand to the next level with our expert services. Let’s create
+              success together!
             </p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="https://wa.me/message/M5LRGSKQIQKZL1" target="_blank">Call To
+            <a class="cta-btn align-middle" href="mailto:custormercare@rprogroup.net.">Call To
               Action</a>
           </div>
         </div>
@@ -534,7 +546,7 @@
 
         <div class="section-title">
           <h2>Portfolio</h2>
-          <p>Check out what we've done before. From logos to websites, see the cool stuff we've made for our clients.
+          <p>Check out what we've done before. SSee the cool stuff we've made for our clients.
             Get inspired and imagine what we can do for you.</p>
         </div>
 
@@ -570,11 +582,11 @@
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-img"><img src="assets/img/portfolio/Frame 14.png" class="img-fluid" alt=""></div>
+            <div class="portfolio-img"><img src="assets/img/Untitled (1).png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
               <h4>Stamp/Seal</h4>
               <!-- <p>App</p> -->
-              <a href="assets/img/portfolio/Frame 14.png" data-gallery="portfolioGallery"
+              <a href="assets/img/Untitled (1).png" data-gallery="portfolioGallery"
                 class="portfolio-lightbox preview-link" title="Stamp/Seal"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
@@ -592,61 +604,61 @@
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img"><img src="assets/img/portfolio/Frame 16.png" class="img-fluid" alt=""></div>
+            <div class="portfolio-img"><img src="assets/img/card.png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
               <h4>Card</h4>
               <!-- <p>Web</p> -->
-              <a href="assets/img/portfolio/Frame 16.png" data-gallery="portfolioGallery"
-                class="portfolio-lightbox preview-link" title="Card"><i class="bx bx-plus"></i></a>
+              <a href="assets/img/card.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"
+                title="Card"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img"><img src="assets/img/portfolio/Frame 87.png" class="img-fluid" alt=""></div>
+            <div class="portfolio-img"><img src="assets/img/bag (1).png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
               <h4>Package Bag Branding</h4>
               <!-- <p>Web</p> -->
-              <a href="assets/img/portfolio/Frame 87.png" data-gallery="portfolioGallery"
-                class="portfolio-lightbox preview-link" title="Flyers"><i class="bx bx-plus"></i></a>
+              <a href="assets/img/bag (1).png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"
+                title="Flyers"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img"><img src="assets/img/portfolio/Frame 86.png" class="img-fluid" alt=""></div>
+            <div class="portfolio-img"><img src="assets/img/branded pen.png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
               <h4>Pen Branding</h4>
               <!-- <p>Web</p> -->
-              <a href="assets/img/portfolio/Frame 86.png" data-gallery="portfolioGallery"
+              <a href="assets/img/branded pen.png" data-gallery="portfolioGallery"
                 class="portfolio-lightbox preview-link" title="Flyers"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img"><img src="assets/img/portfolio/Frame 88.png" class="img-fluid" alt=""></div>
+            <div class="portfolio-img"><img src="assets/img/branded Dairy book.png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
               <h4>Dairy Branding</h4>
               <!-- <p>Web</p> -->
-              <a href="assets/img/portfolio/Frame 88.png" data-gallery="portfolioGallery"
+              <a href="assets/img/branded Dairy book.png" data-gallery="portfolioGallery"
                 class="portfolio-lightbox preview-link" title="Flyers"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-img"><img src="assets/img/portfolio/Frame 18.png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
-              <h4>Web</h4>
-              <!-- <p>Card</p> -->
-              <a href="assets/img/portfolio/Frame 18.png" data-gallery="portfolioGallery"
+              <h4>Web</h4> -->
+          <!-- <p>Card</p> -->
+          <!-- <a href="assets/img/portfolio/Frame 18.png" data-gallery="portfolioGallery"
                 class="portfolio-lightbox preview-link" title="Web"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
-          </div>
+          </div> -->
 
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
@@ -696,12 +708,13 @@
 
         <div class="section-title">
           <h2>Our Testimonies</h2>
-          <p>"Client Success Stories: Hear What They Say About Us"
-            Discover firsthand experiences from our satisfied clients. Their testimonials
-            highlight the positive impact our services have made on their businesses.
-            From accelerated growth to exceptional design, read how we've helped
-            businesses thrive. Be inspired by their success stories and see how we
-            can elevate your business too.</p>
+          <p>"Voices of Success: Stories from Our Valued Clients"
+            Explore real stories from the businesses we’ve partnered with.
+            Hear directly from our clients about the transformative results
+            we’ve delivered—whether it’s driving growth, crafting standout designs,
+            or unlocking new opportunities. Their experiences showcase the tangible
+            impact of our collaboration. Get inspired by their journeys and discover
+            how we can help your business reach new heights. Let their success be the spark for yours.</p>
         </div>
 
         <div class="row">
@@ -712,8 +725,10 @@
               <div class="member-info">
                 <h4>White Adebayo</h4>
                 <span>Chief Executive Officer</span>
-                <p>Working with Cyjust Deals has completely changed our business. Their web and design services have
-                  helped us grow significantly. We highly recommend them to any company wanting to achieve success."</p>
+                <p>Partnering with Cyjust Deals has been a game-changer for our business.
+                  Their expertise in design has driven remarkable growth for us.
+                  We can’t recommend them enough to any company looking to elevate their success and
+                  achieve outstanding results.</p>
                 <!-- <div class="social">
                   <a href=""><i class="ri-twitter-fill"></i></a>
                   <a href=""><i class="ri-facebook-fill"></i></a>
@@ -730,8 +745,10 @@
               <div class="member-info">
                 <h4>Sarah Jhonson</h4>
                 <span>Product Manager</span>
-                <p>As a startup, we needed a web design partner we could trust. Cyjust Deals exceeded our expectations.
-                  Their web design has made our operations smoother, and their team's dedication is impressive."</p>
+                <p>"From the very first meeting, Cyjust Deals made me feel like a priority.
+                  Their branding and design strategies completely transformed my small business,
+                  giving it a fresh, professional edge that has made all the difference. I couldn’t
+                  be more grateful for their expertise and support!"</p>
                 <!-- <div class="social">
                   <a href=""><i class="ri-twitter-fill"></i></a>
                   <a href=""><i class="ri-facebook-fill"></i></a>
@@ -748,8 +765,10 @@
               <div class="member-info">
                 <h4>William Anderson</h4>
                 <span>CTO</span>
-                <p>The graphic design services from Cyjust Deals were amazing. They truly understood our brand and
-                  created visuals that really connected with our audience. </p>
+                <p>The graphic design services from Cyjust Deals were absolutely outstanding.
+                  They took the time to deeply understand our brand and crafted visuals that
+                  resonated powerfully with our audience. Their creativity and attention to detail have
+                  made a lasting impact on our brand identity.</p>
                 <!-- <div class="social">
                   <a href=""><i class="ri-twitter-fill"></i></a>
                   <a href=""><i class="ri-facebook-fill"></i></a>
@@ -861,7 +880,8 @@
                   class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
                 <p>
-                  A well-designed website can enhance your brand presence, improve user experience, and drive more leads
+                  A well-designed website can enhance your brand presence, improve user experience, and drive more
+                  leads
                   and conversions, ultimately boosting your business's online success.
               </div>
             </li>
@@ -883,20 +903,24 @@
                   class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
                 <p>
-                  Branding is how you present your business to the world. It includes your logo, design, and the overall
+                  Branding is how you present your business to the world. It includes your logo, design, and the
+                  overall
                   look and feel of your company. </p>
                 <p>
                   <strong>What branding items do you offer? </strong>
-                  We offer a wide range of branding items, including T-shirts, caps, pens, books, keyholders, phone pop
+                  We offer a wide range of branding items, including T-shirts, caps, pens, books, keyholders, phone
+                  pop
                   sockets, bags, and more.
                 </p>
                 <p>
                   <strong>Can you handle custom branding projects? </strong>
-                  Yes, we can create custom designs for a variety of products to match your brand’s identity and needs.
+                  Yes, we can create custom designs for a variety of products to match your brand’s identity and
+                  needs.
                 </p>
                 <p>
                   <strong>How can branding benefit my business? </strong>
-                  Effective branding helps you stand out from competitors, build customer loyalty, and create a strong,
+                  Effective branding helps you stand out from competitors, build customer loyalty, and create a
+                  strong,
                   recognizable presence.
                 </p>
               </div>
@@ -919,7 +943,8 @@
                   class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
                 <p>
-                  We offer a range of domain registration and hosting solutions to suit your business needs, ensuring a
+                  We offer a range of domain registration and hosting solutions to suit your business needs, ensuring
+                  a
                   reliable online presence and smooth website performance. </p>
               </div>
             </li>
@@ -1004,35 +1029,37 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="https://formspree.io/f/moqondod" method="POST" role="form" class="php-email-form">
+            <form id="contactForm" action="" method="POST" role="form" class="php-email-form">
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Your Name</label>
                   <input type="text" name="name" class="form-control" id="name" required>
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="name">Your Email</label>
+                  <label for="email">Your Email</label>
                   <input type="email" class="form-control" name="email" id="email" required>
                 </div>
               </div>
               <div class="form-group">
-                <label for="name">Subject</label>
+                <label for="subject">Subject</label>
                 <input type="text" class="form-control" name="subject" id="subject" required>
               </div>
               <div class="form-group">
-                <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" required></textarea>
+                <label for="message">Message</label>
+                <textarea class="form-control" name="message" id="message" rows="10" required></textarea>
               </div>
               <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <div class="loading" style="display: none;"></div>
+                <div class="sent-message"></div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center">
+                <button type="submit" id="submit">Send Message</button>
+              </div>
             </form>
           </div>
-
+          </form>
         </div>
+      </div>
 
       </div>
     </section><!-- End Contact Section -->
@@ -1086,8 +1113,8 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <!-- <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li> -->
+              <!-- <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li> -->
               <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
@@ -1133,7 +1160,13 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
+
   <script src="assets/js/main.js"></script>
+  <script src="./assets/js/contact.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/emailjs-com/3.2.0/email.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 </body>
 
