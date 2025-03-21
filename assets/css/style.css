@@ -11,12 +11,14 @@
 --------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
-  background: linear-gradient(to right, #cc5500, #fff); /* Background gradient for the body */
-  color: #fff; /* Fallback text color */
+  background: linear-gradient(to right, #cc5500, #fff);
+  /* Background gradient for the body */
+  color: #fff;
+  /* Fallback text color */
 }
 
 .gradient-text {
-  background: linear-gradient(to left, #67584a, #fff);
+  background: linear-gradient(to left, #67584a, #6a5f5f);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -876,9 +878,12 @@ section {
 }
 
 .services .icon-box .icon {
-  display: flex; /* Use flexbox for centering */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  display: flex;
+  /* Use flexbox for centering */
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
 }
 
 .services .icon-box .icon i {
@@ -894,7 +899,8 @@ section {
   font-size: 24px;
 }
 
-.services .icon-box h4 { /* Target the h4 parent */
+.services .icon-box h4 {
+  /* Target the h4 parent */
   display: flex;
   justify-content: center;
 }
