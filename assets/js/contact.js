@@ -5,7 +5,7 @@
 
 //     const form = document.getElementById("contact-form");
 //     const loading = document.querySelector(".loading");
-//     const errorMessage = document.querySelector(".error-message");
+//     const errorMessage = document.querySelector(".error-message")s;
 //     const sentMessage = document.querySelector(".sent-message");
 
 //     form.addEventListener("submit", function(e) {
@@ -42,80 +42,98 @@
 //     });
 // })();
 // Wait for the DOM to be fully loaded
-(function () {
-    emailjs.init("gAUDJ_4OARmNYhQBC"); // Your Public Key
-})();
 
-// Handle form submission
-document.getElementById("contact-form").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent default form submission
 
-    // Select submit button
-    const submitButton = document.querySelector("#contact-form button");
 
-    // Get form values
-    const name = document.querySelector("[name='form_name']").value.trim();
-    const email = document.querySelector("[name='form_email']").value.trim();
-    const subject = document.querySelector("[name='form_subject']").value.trim();
-    const message = document.querySelector("[name='form_message']").value.trim();
-
-    // Validate form fields (Prevent empty submissions)
-    if (!name || !email || !subject || !message) {
-        Swal.fire({
-            icon: "warning",
-            title: "⚠️ Missing Fields",
-            text: "Please fill in all the fields before submitting.",
-            confirmButtonColor: "#db0303"
+    // Initialize Email.js
+    document.addEventListener('DOMContentLoaded', function () {
+        // Initialize EmailJS
+        emailjs.init("gAUDJ_4OARmNYhQBC");
+    
+        // Get the form element
+        const form = document.getElementById("contactForm");
+    
+        // Add submit event listener to the form
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+    
+            // Get elements
+            const submitButton = document.getElementById("submit");
+            const loadingDiv = document.querySelector('.loading');
+            const sentMessageDiv = document.querySelector('.sent-message');
+            const originalButtonText = submitButton.innerHTML;
+    
+            // Collect form data
+            const params = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                message: document.getElementById("message").value,
+                subject: document.getElementById("subject").value,
+            };
+    
+            // Validate form data
+            if (!params.name || !params.email || !params.message || !params.subject) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Please Fill All Fields',
+                    text: 'All fields are required to send a message.'
+                });
+                return;
+            }
+    
+            // Show loading state
+            submitButton.disabled = true;
+            loadingDiv.style.display = "block";
+    
+            // Loading animation
+            let dotCount = 0;
+            const loadingInterval = setInterval(() => {
+                dotCount = (dotCount + 1) % 4;
+                submitButton.innerHTML = "Sending" + ".".repeat(dotCount);
+            }, 500);
+    
+            // Send email
+            emailjs.send("service_vze8v0t", "template_apkn4el", params)
+                .then(function (response) {
+                    // Clear interval and hide loading
+                    clearInterval(loadingInterval);
+                    loadingDiv.style.display = "none";
+    
+                    // Show success message
+                    sentMessageDiv.style.display = "block";
+    
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Message Sent!',
+                        text: 'Thank you for contacting us. We will get back to you shortly.'
+                    }).then(() => {
+                        // Reset form and UI
+                        form.reset();
+                        submitButton.innerHTML = originalButtonText;
+                        submitButton.disabled = false;
+                        sentMessageDiv.style.display = "none";
+                    });
+                })
+                .catch(function (error) {
+                    console.error("Error:", error);
+    
+                    // Clear interval and hide loading
+                    clearInterval(loadingInterval);
+                    loadingDiv.style.display = "none";
+    
+                    // Show error message
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong. Please try again later.'
+                    });
+    
+                    // Reset button
+                    submitButton.innerHTML = originalButtonText;
+                    submitButton.disabled = false;
+                });
         });
-        return;
-    }
-
-    // Add spinner and disable button
-    submitButton.innerHTML = '<div class="spinner-border spinner-border-sm text-light me-2" role="status"></div> Sending...';
-    submitButton.disabled = true;
-
-    // Prepare form data
-    const formData = {
-        from_name: name,
-        form_email: email,
-        form_subject: subject,
-        form_message: message,
-        date: new Date().toLocaleString() // Get current date & time
-    };
-
-    // Send email using Email.js
-    emailjs.send("service_vze8v0t", "template_apkn4el", formData)
-        .then(function (response) {
-            // Show success message
-            Swal.fire({
-                icon: "success",
-                title: "✅ Message Sent!",
-                text: "Thank you for reaching out. We will get back to you soon.",
-                confirmButtonColor: "#db0303"
-            });
-
-            // Reset form
-            document.getElementById("contact-form").reset();
-
-            // Restore button state
-            submitButton.innerHTML = "Send Message";
-            submitButton.disabled = false;
-        })
-        .catch(function (error) {
-            // Show error message
-            Swal.fire({
-                icon: "error",
-                title: "❌ Submission Failed",
-                text: "An error occurred. Please try again later.",
-                confirmButtonColor: "#db0303"
-            });
-
-            // Restore button state
-            submitButton.innerHTML = "Send Message";
-            submitButton.disabled = false;
-            console.error("EmailJS Error:", error);
-        });
-});
+    });
     //     event.preventDefault(); // Prevent default form submission
 
     //     // Get the input values
