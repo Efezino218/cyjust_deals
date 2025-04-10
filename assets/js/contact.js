@@ -5,7 +5,7 @@
 
 //     const form = document.getElementById("contact-form");
 //     const loading = document.querySelector(".loading");
-//     const errorMessage = document.querySelector(".error-message");
+//     const errorMessage = document.querySelector(".error-message")s;
 //     const sentMessage = document.querySelector(".sent-message");
 
 //     form.addEventListener("submit", function(e) {
@@ -42,101 +42,98 @@
 //     });
 // })();
 // Wait for the DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize EmailJS
-    emailjs.init("3PD5AyCly9DCyS4u1");
 
-    // Get the form element
-    const form = document.getElementById("contactForm");
+
+
+    // Initialize Email.js
+    document.addEventListener('DOMContentLoaded', function () {
+        // Initialize EmailJS
+        emailjs.init("gAUDJ_4OARmNYhQBC");
     
-    // Add submit event listener to the form
-    form.addEventListener("submit", function(e) {
-        e.preventDefault();
-
-        // Get elements
-        const submitButton = document.getElementById("submit");
-        const loadingDiv = document.querySelector('.loading');
-        const sentMessageDiv = document.querySelector('.sent-message');
-        const originalButtonText = submitButton.innerHTML;
-
-        // Collect form data
-        const params = {
-            name: document.getElementById("name").value,
-            email: document.getElementById("email").value,
-            message: document.getElementById("message").value,
-            subject: document.getElementById("subject").value,
-        };
-
-        // Validate form data
-        if (!params.name || !params.email || !params.message || !params.subject) {
-            Swal.fire({
-                icon: 'warning',
-                title: 'Please Fill All Fields',
-                text: 'All fields are required to send a message.'
-            });
-            return;
-        }
-
-        // Show loading state
-        submitButton.disabled = true;
-        loadingDiv.style.display = "block";
-        
-        // Loading animation
-        let dotCount = 0;
-        const loadingInterval = setInterval(() => {
-            dotCount = (dotCount + 1) % 4;
-            submitButton.innerHTML = "Sending" + ".".repeat(dotCount);
-        }, 500);
-
-        // Send email
-        emailjs.send("service_ptzp7rd", "template_uvkbxrd", params)
-            .then(function(response) {
-                // Clear interval and hide loading
-                clearInterval(loadingInterval);
-                loadingDiv.style.display = "none";
-                
-                // Show success message
-                sentMessageDiv.style.display = "block";
-                
+        // Get the form element
+        const form = document.getElementById("contactForm");
+    
+        // Add submit event listener to the form
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+    
+            // Get elements
+            const submitButton = document.getElementById("submit");
+            const loadingDiv = document.querySelector('.loading');
+            const sentMessageDiv = document.querySelector('.sent-message');
+            const originalButtonText = submitButton.innerHTML;
+    
+            // Collect form data
+            const params = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                message: document.getElementById("message").value,
+                subject: document.getElementById("subject").value,
+            };
+    
+            // Validate form data
+            if (!params.name || !params.email || !params.message || !params.subject) {
                 Swal.fire({
-                    icon: 'success',
-                    title: 'Message Sent!',
-                    text: 'Thank you for contacting us. We will get back to you shortly.'
-                }).then(() => {
-                    // Reset form and UI
-                    form.reset();
+                    icon: 'warning',
+                    title: 'Please Fill All Fields',
+                    text: 'All fields are required to send a message.'
+                });
+                return;
+            }
+    
+            // Show loading state
+            submitButton.disabled = true;
+            loadingDiv.style.display = "block";
+    
+            // Loading animation
+            let dotCount = 0;
+            const loadingInterval = setInterval(() => {
+                dotCount = (dotCount + 1) % 4;
+                submitButton.innerHTML = "Sending" + ".".repeat(dotCount);
+            }, 500);
+    
+            // Send email
+            emailjs.send("service_vze8v0t", "template_apkn4el", params)
+                .then(function (response) {
+                    // Clear interval and hide loading
+                    clearInterval(loadingInterval);
+                    loadingDiv.style.display = "none";
+    
+                    // Show success message
+                    sentMessageDiv.style.display = "block";
+    
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Message Sent!',
+                        text: 'Thank you for contacting us. We will get back to you shortly.'
+                    }).then(() => {
+                        // Reset form and UI
+                        form.reset();
+                        submitButton.innerHTML = originalButtonText;
+                        submitButton.disabled = false;
+                        sentMessageDiv.style.display = "none";
+                    });
+                })
+                .catch(function (error) {
+                    console.error("Error:", error);
+    
+                    // Clear interval and hide loading
+                    clearInterval(loadingInterval);
+                    loadingDiv.style.display = "none";
+    
+                    // Show error message
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong. Please try again later.'
+                    });
+    
+                    // Reset button
                     submitButton.innerHTML = originalButtonText;
                     submitButton.disabled = false;
-                    sentMessageDiv.style.display = "none";
                 });
-            })
-            .catch(function(error) {
-                console.error("Error:", error);
-                
-                // Clear interval and hide loading
-                clearInterval(loadingInterval);
-                loadingDiv.style.display = "none";
-                
-                // Show error message
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Something went wrong. Please try again later.'
-                });
-                
-                // Reset button
-                submitButton.innerHTML = originalButtonText;
-                submitButton.disabled = false;
-            });
+        });
     });
-});
-    
-    
-    
-    
-    //     emailjs.init("FUXJJrXLJYuGviHVH");
-
-    // document.getElementById("contactForm").addEventListener("submit", function (event) {
     //     event.preventDefault(); // Prevent default form submission
 
     //     // Get the input values
