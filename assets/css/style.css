@@ -14,6 +14,107 @@ body {
   background: linear-gradient(to right, #cc5500, #fff);
   /* Background gradient for the body */
 }
+.custom-page-loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(245, 245, 247, 0.9);
+  z-index: 9999;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.custom-page-loader-spinner {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.custom-page-loader-circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  animation: custom-page-loader-rotate 2s linear infinite;
+}
+
+.custom-page-loader-circle-1 {
+  border-top-color: #eb1313;
+  animation-delay: 0s;
+}
+
+.custom-page-loader-circle-2 {
+  border-right-color: #ea1a1a;
+  animation-delay: 0.2s;
+}
+
+.custom-page-loader-circle-3 {
+  border-bottom-color: #f97316;
+  animation-delay: 0.4s;
+}
+
+.custom-page-loader-circle-4 {
+  border-left-color: #f97316;
+  animation-delay: 0.6s;
+}
+
+.custom-page-loader-pulse {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: #f97316;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: custom-page-loader-pulse 1.5s ease-in-out infinite;
+}
+
+.custom-page-loader-text {
+  color: #333;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  animation: custom-page-loader-fadeInOut 1.5s ease-in-out infinite;
+}
+
+@keyframes custom-page-loader-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes custom-page-loader-pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes custom-page-loader-fadeInOut {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
 
 .gradient-text {
   background: linear-gradient(to left, #67584a, #6a5f5f);
@@ -537,7 +638,7 @@ section {
 }
 
 .section-bg {
-  background-color: #f3f5fa;
+  /* background-color: #f3f5fa; */
 }
 
 .section-title {
