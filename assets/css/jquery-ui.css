@@ -1052,8 +1052,8 @@ body .ui-tooltip {
 }
 
 .ui-widget-header {
-	border: 1px solid #cda274;
-	background: #cda274;
+	border: 1px solid #CE2029;
+	background: #CE2029;
 	color: #ffffff;
 	font-weight: bold;
 }
@@ -1073,8 +1073,8 @@ body .ui-tooltip {
 works properly when clicked or hovered */
 html .ui-button.ui-state-disabled:hover,
 html .ui-button.ui-state-disabled:active {
-	border: 1px solid #cda274;
-	background: #cda274;
+	border: 1px solid #CE2029;
+	background: #CE2029;
 	font-weight: normal;
 	color: #ffffff;
 }
@@ -1134,7 +1134,7 @@ a.ui-button:active,
 .select-box .ui-button:active,
 .select-box .ui-button.ui-state-active:hover,
 .select-box .ui-button:focus {
-	border: 1px solid #cda274;
+	border: 1px solid #CE2029;
 	background: #ffffff;
 	font-weight: normal;
 	color: #9b9fa6;
