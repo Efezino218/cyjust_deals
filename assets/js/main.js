@@ -309,3 +309,51 @@ document.addEventListener('DOMContentLoaded', function () {
   }, 500); // 10000 Initial 10-second delay before the first show
 });
 
+
+
+
+
+
+/* ==========================================================================
+                          Preloader
+   ========================================================================== */
+
+function initPreloader() {
+  // Check if preloader element exists
+  const preloader = document.getElementById('preloader');
+  if (!preloader) return;
+
+  // Debugging point 1
+  console.log('Preloader element found, initialization started');
+
+  // When ALL resources finish loading (images, fonts, etc)
+  window.addEventListener('load', function () {
+    // Debugging point 2
+    console.log('All page resources finished loading');
+
+    // Start fade-out (CSS handles the animation)
+    preloader.classList.add('fade-out');
+
+    // Remove preloader after animation completes
+    setTimeout(() => {
+      preloader.style.display = 'none';
+      // Debugging point 3
+      console.log('Preloader hidden');
+    }, 400);
+  });
+
+  // Fallback: Hide preloader if loading takes too long
+  const timeout = setTimeout(() => {
+    if (preloader) {
+      preloader.style.display = 'none';
+      // Debugging point 4
+      console.warn('Preloader timeout triggered');
+    }
+  }, 8000);
+
+  // Cleanup timeout if load completes normally
+  window.addEventListener('load', () => clearTimeout(timeout));
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', initPreloader);
